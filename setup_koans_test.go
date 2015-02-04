@@ -11,12 +11,14 @@ import (
 )
 
 const (
-	intintint int  = -1
-	deleteme  bool = false
+	intintint    int  = -1
+	boolboolbool bool = false
+	deleteme     bool = false
 )
 
 func TestKoans(t *testing.T) {
-	aboutStruct()
+	// aboutStruct()
+	aboutInterface()
 }
 
 func assert(o bool) {
