@@ -18,8 +18,8 @@ const (
 )
 
 func TestKoans(t *testing.T) {
-	aboutInterface()
 	aboutStruct()
+	aboutInterface()
 	aboutDefer()
 	aboutTemplate()
 	aboutRecover()
