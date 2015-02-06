@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// impl method
 type V struct {
 	i int
 }
@@ -29,6 +30,24 @@ func aboutStruct() {
 	assert(v.i == intintint)
 	v.pointer()
 	assert(v.i == intintint)
+
+	// composition
+	type V2 struct {
+		V
+	}
+	v2 := V2{}
+	v2.pointer()
+	assert(v2.i == intintint)
+
+	// define same field
+	type V3 struct {
+		V
+		i int
+	}
+	v3 := V3{i: 100}
+	v3.pointer()
+	assert(v3.i == intintint)
+	assert(v3.V.i == intintint)
 
 	// translate json
 	type J struct {
