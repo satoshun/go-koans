@@ -11,11 +11,11 @@ type V struct {
 	i int
 }
 
-func (self V) value() {
+func (self V) incr() {
 	self.i++
 }
 
-func (self *V) pointer() {
+func (self *V) pincr() {
 	if self != nil {
 		self.i++
 	}
@@ -26,22 +26,22 @@ func aboutStruct() {
 
 	// The diffrence between value receiver and pointer receiver
 	assert(v.i == intintint)
-	v.value()
+	v.incr()
 	assert(v.i == intintint)
-	v.pointer()
+	v.pincr()
 	assert(v.i == intintint)
 
 	var pv *V
 	// both raise nil pointer error?
-	pv.value()
-	pv.pointer()
+	pv.incr()
+	pv.pincr()
 
 	// composition
 	type V2 struct {
 		V
 	}
 	v2 := V2{}
-	v2.pointer()
+	v2.pincr()
 	assert(v2.i == intintint)
 
 	// define same field
@@ -50,7 +50,6 @@ func aboutStruct() {
 		i int
 	}
 	v3 := V3{i: 100}
-	v3.pointer()
 	assert(v3.i == intintint)
 	assert(v3.V.i == intintint)
 
