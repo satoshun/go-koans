@@ -31,6 +31,11 @@ func aboutStruct() {
 	v.pointer()
 	assert(v.i == intintint)
 
+	var pv *V
+	// both raise nil pointer error?
+	pv.value()
+	pv.pointer()
+
 	// composition
 	type V2 struct {
 		V
@@ -64,9 +69,4 @@ func aboutStruct() {
 	json.Unmarshal(jByte, &j2)
 	assert(j2.FirstName == stringstring)
 	assert(j2.LastName == stringstring)
-
-	var pv *V
-	// both raise nil pointer error?
-	pv.value()
-	pv.pointer()
 }
